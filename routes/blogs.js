@@ -1,6 +1,4 @@
 var express = require('express');
-const { MongoMissingCredentialsError } = require('mongodb');
-const { all } = require('.');
 var router = express.Router();
 const { blogsDB } = require("../mongo");
 
