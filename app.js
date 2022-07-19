@@ -5,15 +5,15 @@ var logger = require('morgan');
 const cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var blogsRouter = require('./routes/blogs');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 var { mongoConnect } = require('./mongo.js');
       mongoConnect();
 
 
-var blogsRouter = require('./routes/blogs');
-
+app.use('/admin', adminRouter);
 app.use(cors())
 app.use('/blogs', blogsRouter);
 app.use(logger('dev'));
